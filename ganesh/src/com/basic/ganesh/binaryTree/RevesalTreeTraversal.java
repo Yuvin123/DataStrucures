@@ -2,12 +2,12 @@ package com.basic.ganesh.binaryTree;
 
 import com.basic.ganesh.hasingExamples.Node;
 
-public class ReseralTreeTraversal {
+public class RevesalTreeTraversal {
 
-	    Node root;
+	    public Node root;
 	  
 	    /* Function to print REVERSE level order traversal a tree*/
-	    void reverseLevelOrder(Node node) 
+	    public void reverseLevelOrder(Node node) 
 	    {
 	        int h = height(node);
 	        int i;
@@ -19,7 +19,7 @@ public class ReseralTreeTraversal {
 	    }
 	  
 	    /* Print nodes at a given level */
-	    void printGivenLevel(Node node, int level) 
+	   public void printGivenLevel(Node node, int level) 
 	    {
 	        if (node == null)
 	            return;
@@ -35,7 +35,7 @@ public class ReseralTreeTraversal {
 	    /* Compute the "height" of a tree -- the number of
 	     nodes along the longest path from the root node
 	     down to the farthest leaf node.*/
-	    int height(Node node) 
+	    public int height(Node node) 
 	    {
 	        if (node == null)
 	            return 0;
@@ -56,7 +56,7 @@ public class ReseralTreeTraversal {
 	    // Driver program to test above functions
 	    public static void main(String args[]) 
 	    {
-	    	ReseralTreeTraversal tree = new ReseralTreeTraversal();
+	    	RevesalTreeTraversal tree = new RevesalTreeTraversal();
 	  
 	        // Let us create trees shown in above diagram
 	        tree.root = new Node(1);
@@ -70,5 +70,4 @@ public class ReseralTreeTraversal {
 	    }
 	}
 	  
-	// This code has been contributed by Mayank Jaiswal
 

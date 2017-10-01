@@ -1,4 +1,4 @@
-package com.basic.ganesh.hasingExamples;
+package com.basic.ganesh.sortingAlgorithms;
 
 //Java program for implementation of Heap Sort
 public class HeapSort

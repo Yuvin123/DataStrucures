@@ -10,4 +10,14 @@ public class Node
         data = item;
         left = right = null;
     }
+    
+    public void setLeft(Node left) 
+    {
+        this.left = left;
+    }
+  
+    public void setRight(Node right) 
+    {
+        this.right = right;
+    }
 }

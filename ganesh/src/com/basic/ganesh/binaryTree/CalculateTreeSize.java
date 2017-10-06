@@ -1,4 +1,6 @@
-package com.basic.ganesh.hasingExamples;
+package com.basic.ganesh.binaryTree;
+
+import com.basic.ganesh.hasingExamples.Node;
 
 public class CalculateTreeSize {
 

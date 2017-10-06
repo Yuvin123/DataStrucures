@@ -1,4 +1,4 @@
-package com.basic.ganesh.sortingAlgorithms;
+package com.basic.ganesh.trieDataStructures;
 
 import java.util.HashMap;
 

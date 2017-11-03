@@ -29,7 +29,7 @@ public class Alternate_sorting {
 	    /* Driver program to test above functions */
 	    public static void main (String[] args)
 	    {
-	        int arr[] = {1, 12, 4, 6, 7, 10};
+	        int arr[] = {1, 12, 4, 6, 7, 10,9};
 	        int n = arr.length;
 	        alternateSort(arr, n);
 	    }

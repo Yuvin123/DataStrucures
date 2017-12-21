@@ -66,8 +66,11 @@ public class Segregate_0_1 {
 	        segregate0and1(arr, n);
 	        print(arr, n);
 	        
-	        segregate0and1_method2(arr, n);
-	        print(arr, n);
+	        int arr2[] = new int[]{ 0, 1, 0, 1, 1, 1 };
+	        int n2 = arr.length;
+	        
+	        segregate0and1_method2(arr2, n2);
+	        print(arr2, n2);
 	         
 	    }
 	}

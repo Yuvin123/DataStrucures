@@ -1,14 +1,8 @@
 package com.basic.ganesh.linkedList;
 
-
-
 public class Middle_linedList {
 
-
-
 	Node head; // head of linked list
-
-
 
 	/* Linked list node */
 
@@ -31,8 +25,6 @@ public class Middle_linedList {
 		}
 
 	}
-
-
 
 	/* Function to print middle of linked list */
 
@@ -60,13 +52,11 @@ public class Middle_linedList {
 
 			System.out.println("The middle element is [" +
 
-                                       slow_ptr.data + "] \n");
+			slow_ptr.data + "] \n");
 
 		}
 
 	}
-
-
 
 	/* Inserts a new Node at front of the list. */
 
@@ -74,19 +64,17 @@ public class Middle_linedList {
 
 	{
 
-		/* 1 & 2: Allocate the Node &
-
-                         Put in the data*/
+		/*
+		 * 1 & 2: Allocate the Node &
+		 * 
+		 * Put in the data
+		 */
 
 		Node new_node = new Node(new_data);
-
-
 
 		/* 3. Make next of new Node as head */
 
 		new_node.next = head;
-
-
 
 		/* 4. Move the head to point to new Node */
 
@@ -94,11 +82,11 @@ public class Middle_linedList {
 
 	}
 
-
-
-	/* This function prints contents of linked list
-
-             starting from  the given node */
+	/*
+	 * This function prints contents of linked list
+	 * 
+	 * starting from the given node
+	 */
 
 	public void printList()
 
@@ -110,7 +98,7 @@ public class Middle_linedList {
 
 		{
 
-			System.out.print(tnode.data+"->");
+			System.out.print(tnode.data + "->");
 
 			tnode = tnode.next;
 
@@ -120,15 +108,13 @@ public class Middle_linedList {
 
 	}
 
-
-
-	public static void main(String [] args)
+	public static void main(String[] args)
 
 	{
 
 		Middle_linedList llist = new Middle_linedList();
 
-		for (int i=5; i>0; --i)
+		for (int i = 5; i > 0; --i)
 
 		{
 

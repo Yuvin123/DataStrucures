@@ -6,14 +6,17 @@ public class DetectLoop_linkedList {
 
 	// Java program to detect loop in a linked list
 
-	static Node head;  // head of list
+	static Node head; // head of list
 
-	/* Linked list Node*/
-	static class Node
-	{
+	/* Linked list Node */
+	static class Node {
 		int data;
 		Node next;
-		Node(int d) {data = d; next = null; }
+
+		Node(int d) {
+			data = d;
+			next = null;
+		}
 	}
 
 	/* Inserts a new Node at front of the list. */
@@ -22,27 +25,23 @@ public class DetectLoop_linkedList {
 
 	{
 
-		/* 1 & 2: Allocate the Node &
-
-                         Put in the data*/
+		/*
+		 * 1 & 2: Allocate the Node &
+		 * 
+		 * Put in the data
+		 */
 
 		Node new_node = new Node(new_data);
-
-
 
 		/* 3. Make next of new Node as head */
 
 		new_node.next = head;
-
-
 
 		/* 4. Move the head to point to new Node */
 
 		head = new_node;
 
 	}
-
-
 
 	// Returns true if there is a loop in linked
 
@@ -70,43 +69,34 @@ public class DetectLoop_linkedList {
 
 				return true;
 
-
-
 			// If we are seeing the node for
 
 			// the first time, insert it in hash
 
 			s.add(h);
 
-
-
 			h = h.next;
 
 		}
-
-
 
 		return false;
 
 	}
 
-
-
 	/* Driver program to test above function */
 
-	public static void main(String[] args) 
+	public static void main(String[] args)
 
 	{
 
-		DetectLoop_linkedList llist = new DetectLoop_linkedList();
-		llist.push(20);
-		llist.push(4);
-		llist.push(15);
-		llist.push(10);
+		DetectLoop_linkedList.push(20);
+		DetectLoop_linkedList.push(4);
+		DetectLoop_linkedList.push(15);
+		DetectLoop_linkedList.push(10);
 
-		/*Create loop for testing */
+		/* Create loop for testing */
 
-		llist.head.next.next.next.next = llist.head;
+		DetectLoop_linkedList.head.next.next.next.next = DetectLoop_linkedList.head;
 
 		if (detectLoop(head))
 

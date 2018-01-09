@@ -1,82 +1,56 @@
 package com.basic.ganesh.linkedList;
 
-
-
 public class Palingdrome_linkedList {
 
+	Node head; // head of list
+	Node slow_ptr, fast_ptr, second_half;
 
-
-	Node head;  // head of list
-
-	Node slow_ptr, fast_ptr,second_half;
-
-
-
-	/* Linked list Node*/
-
-	class Node 
-
-	{
-
+	/* Linked list Node */
+	class Node {
 		char data;
-
 		Node next;
 
-
-
-		Node(char d) 
-
-		{
-
+		Node(char d) {
 			data = d;
-
 			next = null;
-
 		}
-
 	}
 
+	/*
+	 * Function to check if given linked list is
+	 * 
+	 * palindrome or not
+	 */
 
-
-	/* Function to check if given linked list is
-
-             palindrome or not */
-
-	boolean isPalindrome(Node head) 
-
-	{
-
-		slow_ptr = head; fast_ptr = head;
-
+	boolean isPalindrome(Node head) {
+		slow_ptr = head;
+		fast_ptr = head;
 		Node prev_of_slow_ptr = head;
-
-		Node midnode = null;  // To handle odd size list
-
+		Node midnode = null; // To handle odd size list
 		boolean res = true; // initialize result
-
-
-
-		if (head != null && head.next != null) 
+		if (head != null && head.next != null)
 
 		{
 
-			/* Get the middle of the list. Move slow_ptr by 1
+			/*
+			 * Get the middle of the list. Move slow_ptr by 1
+			 * 
+			 * and fast_ptrr by 2, slow_ptr will have the middle
+			 * 
+			 * node
+			 */
 
-                     and fast_ptrr by 2, slow_ptr will have the middle
-
-                     node */
-
-			while (fast_ptr != null && fast_ptr.next != null) 
+			while (fast_ptr != null && fast_ptr.next != null)
 
 			{
 
 				fast_ptr = fast_ptr.next.next;
 
-
-
-				/*We need previous of the slow_ptr for
-
-                         linked lists  with odd elements */
+				/*
+				 * We need previous of the slow_ptr for
+				 * 
+				 * linked lists with odd elements
+				 */
 
 				prev_of_slow_ptr = slow_ptr;
 
@@ -84,17 +58,17 @@ public class Palingdrome_linkedList {
 
 			}
 
+			/*
+			 * fast_ptr would become NULL when there are even elements
+			 * 
+			 * in the list and not NULL for odd elements. We need to skip
+			 * 
+			 * the middle node for odd case and store it somewhere so that
+			 * 
+			 * we can restore the original list
+			 */
 
-
-			/* fast_ptr would become NULL when there are even elements 
-
-                     in the list and not NULL for odd elements. We need to skip  
-
-                     the middle node for odd case and store it somewhere so that
-
-                     we can restore the original list */
-
-			if (fast_ptr != null) 
+			if (fast_ptr != null)
 
 			{
 
@@ -104,31 +78,25 @@ public class Palingdrome_linkedList {
 
 			}
 
-
-
 			// Now reverse the second half and compare it with first half
 
 			second_half = slow_ptr;
 
 			prev_of_slow_ptr.next = null; // NULL terminate first half
 
-			reverse();  // Reverse the second half
+			reverse(); // Reverse the second half
 
 			res = compareLists(head, second_half); // compare
-
-
 
 			/* Construct the original list back */
 
 			reverse(); // Reverse the second half again
 
-
-
-			if (midnode != null) 
+			if (midnode != null)
 
 			{
 
-				// If there was a mid node (odd size case) which                                                         
+				// If there was a mid node (odd size case) which
 
 				// was not part of either first half or second half.
 
@@ -146,13 +114,13 @@ public class Palingdrome_linkedList {
 
 	}
 
+	/*
+	 * Function to reverse the linked list Note that this
+	 * 
+	 * function may change the head
+	 */
 
-
-	/* Function to reverse the linked list  Note that this
-
-             function may change the head */
-
-	void reverse() 
+	void reverse()
 
 	{
 
@@ -162,7 +130,7 @@ public class Palingdrome_linkedList {
 
 		Node next;
 
-		while (current != null) 
+		while (current != null)
 
 		{
 
@@ -180,11 +148,9 @@ public class Palingdrome_linkedList {
 
 	}
 
+	/* Function to check if two input lists have same data */
 
-
-	/* Function to check if two input lists have same data*/
-
-	boolean compareLists(Node head1, Node head2) 
+	boolean compareLists(Node head1, Node head2)
 
 	{
 
@@ -192,13 +158,11 @@ public class Palingdrome_linkedList {
 
 		Node temp2 = head2;
 
-
-
-		while (temp1 != null && temp2 != null) 
+		while (temp1 != null && temp2 != null)
 
 		{
 
-			if (temp1.data == temp2.data) 
+			if (temp1.data == temp2.data)
 
 			{
 
@@ -212,47 +176,43 @@ public class Palingdrome_linkedList {
 
 		}
 
-
-
-		/* Both are empty reurn 1*/
+		/* Both are empty reurn 1 */
 
 		if (temp1 == null && temp2 == null)
 
 			return true;
 
-
-
-		/* Will reach here when one is NULL
-
-                 and other is not */
+		/*
+		 * Will reach here when one is NULL
+		 * 
+		 * and other is not
+		 */
 
 		return false;
 
 	}
 
+	/*
+	 * Push a node to linked list. Note that this function
+	 * 
+	 * changes the head
+	 */
 
-
-	/* Push a node to linked list. Note that this function
-
-             changes the head */
-
-	public void push(char new_data) 
+	public void push(char new_data)
 
 	{
 
-		/* Allocate the Node &
-
-                 Put in the data */
+		/*
+		 * Allocate the Node &
+		 * 
+		 * Put in the data
+		 */
 
 		Node new_node = new Node(new_data);
-
-
 
 		/* link the old list off the new one */
 
 		new_node.next = head;
-
-
 
 		/* Move the head to point to new Node */
 
@@ -260,15 +220,13 @@ public class Palingdrome_linkedList {
 
 	}
 
-
-
 	// A utility function to print a given linked list
 
-	void printList(Node ptr) 
+	void printList(Node ptr)
 
 	{
 
-		while (ptr != null) 
+		while (ptr != null)
 
 		{
 
@@ -282,31 +240,25 @@ public class Palingdrome_linkedList {
 
 	}
 
-
-
 	/* Driver program to test the above functions */
 
 	public static void main(String[] args) {
-
-
 
 		/* Start with the empty list */
 
 		Palingdrome_linkedList llist = new Palingdrome_linkedList();
 
-
-
-		char str[] = {'a', 'b', 'a', 'c', 'a', 'b', 'a'};
+		char str[] = { 'a', 'b', 'a', 'c', 'a', 'b', 'a' };
 
 		String string = new String(str);
 
-		for (int i = 0; i< 7 ; i++) {
+		for (int i = 0; i < 7; i++) {
 
 			llist.push(str[i]);
 
 			llist.printList(llist.head);
 
-			if (llist.isPalindrome(llist.head) != false) 
+			if (llist.isPalindrome(llist.head) != false)
 
 			{
 

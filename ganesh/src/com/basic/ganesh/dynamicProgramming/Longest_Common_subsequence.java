@@ -1,4 +1,4 @@
-package com.basic.ganesh.stringExamples;
+package com.basic.ganesh.dynamicProgramming;
 
 public class Longest_Common_subsequence {
 	/* A Naive recursive implementation of LCS problem in java */

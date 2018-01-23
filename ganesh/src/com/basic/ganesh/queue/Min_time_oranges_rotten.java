@@ -72,7 +72,7 @@ public class Min_time_oranges_rotten {
 				temp = Q.peek();
 
 				// Check right adjacent cell that if it can be rotten
-				if (isValid(temp.x + 1, temp.y + 1) && arr[temp.x + 1][temp.y] == 1) {
+				if (isValid(temp.x + 1, temp.y) && arr[temp.x + 1][temp.y] == 1) {
 					if (!flag) {
 						// if this is the first orange to get rotten, increase
 						// count and set the flag.

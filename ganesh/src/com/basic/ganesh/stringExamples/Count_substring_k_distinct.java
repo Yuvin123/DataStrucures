@@ -2,7 +2,7 @@ package com.basic.ganesh.stringExamples;
 
 import java.util.Arrays;
 
-public class Count_substring_k_distance {
+public class Count_substring_k_distinct {
 	// Java program to CountKSubStr number of substrings
 	// with exactly distinct characters in a given string
 

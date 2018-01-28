@@ -14,7 +14,7 @@ public class TrieExample {
 
 		// isEndOfWord is true if the node represents
 		// end of a word
-		boolean isEndOfWord;
+		boolean isEndOfWord ;
 
 		TrieNode(){
 			isEndOfWord = false;
@@ -75,7 +75,7 @@ public class TrieExample {
 	{
 		// Input keys (use only 'a' through 'z' and lower case)
 		String keys[] = {"the", "a", "there", "answer", "any",
-				"by", "bye", "their"};
+				"by", "bye", "their","there"};
 
 		String output[] = {"Not present in trie", "Present in trie"};
 
